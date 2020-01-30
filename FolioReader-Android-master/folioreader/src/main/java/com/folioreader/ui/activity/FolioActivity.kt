@@ -73,10 +73,14 @@ import org.readium.r2.streamer.parser.EpubParser
 import org.readium.r2.streamer.parser.PubBox
 import org.readium.r2.streamer.server.Server
 import java.lang.ref.WeakReference
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+
 
 class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControllerCallback,
     View.OnSystemUiVisibilityChangeListener {
-
+    lateinit var mAdView : AdView
     private var bookFileName: String? = null
 
     private var mFolioPageViewPager: DirectionalViewpager? = null
@@ -244,6 +248,11 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
         // Need to add when vector drawables support library is used.
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
         handler = Handler()
         val display = windowManager.defaultDisplay
