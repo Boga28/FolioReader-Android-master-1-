@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:maxVisibleDuration="10000"
-        tools:visibility="visible" />
+        tools:visibility="invisible" />
 
     <com.folioreader.ui.view.VerticalSeekbar
         android:id="@+id/scrollSeekbar"
@@ -54,6 +54,13 @@
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
         android:visibility="visible">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pagesLeft"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="center">
 
         <TextView
             android:id="@+id/minutesLeft"
@@ -68,12 +75,7 @@
             android:layout_height="wrap_content"
             android:textColor="#bbbbbb"
             android:textSize="9sp" />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/pagesLeft"
-            android:layout_alignParentBottom="true"
-            android:gravity="center">
+        </LinearLayout>
 
             <com.google.android.gms.ads.AdView
                 android:id="@+id/adView"
@@ -84,6 +86,6 @@
                 ads:adSize="SMART_BANNER"
                 ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
             </com.google.android.gms.ads.AdView>
-        </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>
