@@ -9,6 +9,7 @@
     tools:context="com.folioreader.ui.activity.FolioActivity"
     tools:menu="@menu/menu_main">
 
+
     <com.folioreader.ui.view.DirectionalViewpager
         android:id="@+id/folioPageViewPager"
         android:layout_width="0dp"
@@ -19,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <com.folioreader.ui.view.FolioAppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="0dp"
@@ -26,15 +28,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
-            app:contentInsetStartWithNavigation="0dp" />
-
         <com.google.android.gms.ads.AdView
             android:layout_gravity="center"
             android:id="@+id/adView"
@@ -45,6 +38,17 @@
             ads:adSize="SMART_BANNER"
             ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
         </com.google.android.gms.ads.AdView>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            />
+
+
     </com.folioreader.ui.view.FolioAppBarLayout>
 
 
