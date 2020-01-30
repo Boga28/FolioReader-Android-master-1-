@@ -302,14 +302,11 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         } else {
             setupBook()
         }
-        try {
             MobileAds.initialize(this) {}
             mAdView = findViewById(R.id.adView)
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
-        } catch (e: Exception) {
 
-        }
     }
 
     private fun initActionBar() {
