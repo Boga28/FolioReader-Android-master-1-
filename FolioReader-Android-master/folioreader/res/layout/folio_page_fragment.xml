@@ -50,17 +50,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
         android:visibility="visible">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/pagesLeft"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:gravity="center">
+
 
         <TextView
             android:id="@+id/minutesLeft"
@@ -75,17 +69,8 @@
             android:layout_height="wrap_content"
             android:textColor="#bbbbbb"
             android:textSize="9sp" />
-        </LinearLayout>
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                ads:adSize="SMART_BANNER"
-                ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
-            </com.google.android.gms.ads.AdView>
+
 
     </LinearLayout>
 </RelativeLayout>
