@@ -249,10 +249,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         // Need to add when vector drawables support library is used.
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
-        MobileAds.initialize(this) {}
-        mAdView = findViewById(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+
 
         handler = Handler()
         val display = windowManager.defaultDisplay
@@ -291,6 +288,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         initActionBar()
         initMediaController()
 
+
         if (ContextCompat.checkSelfPermission(
                 this@FolioActivity,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -303,6 +301,14 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             )
         } else {
             setupBook()
+        }
+        try {
+            MobileAds.initialize(this) {}
+            mAdView = findViewById(R.id.adView)
+            val adRequest = AdRequest.Builder().build()
+            mAdView.loadAd(adRequest)
+        } catch (e: Exception) {
+
         }
     }
 
