@@ -33,9 +33,12 @@ import com.folioreader.util.UiUtil
 import com.folioreader.viewmodels.SearchViewModel
 import kotlinx.android.synthetic.main.activity_search.*
 import java.lang.reflect.Field
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 class SearchActivity : AppCompatActivity(), OnItemClickListener {
-
+    lateinit var mAdView : AdView
     companion object {
         @JvmField
         val LOG_TAG: String = SearchActivity::class.java.simpleName
@@ -106,6 +109,11 @@ class SearchActivity : AppCompatActivity(), OnItemClickListener {
 
         setContentView(R.layout.activity_search)
         init(config)
+
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
     }
 
     private fun init(config: Config) {

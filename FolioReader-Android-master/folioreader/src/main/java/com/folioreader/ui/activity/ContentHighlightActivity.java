@@ -19,8 +19,12 @@ import com.folioreader.ui.fragment.TableOfContentFragment;
 import com.folioreader.util.AppUtil;
 import com.folioreader.util.UiUtil;
 import org.readium.r2.shared.Publication;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class ContentHighlightActivity extends AppCompatActivity {
+    private AdView mAdView;
     private boolean mIsNightMode;
     private Config mConfig;
     private Publication publication;
@@ -39,6 +43,10 @@ public class ContentHighlightActivity extends AppCompatActivity {
         mConfig = AppUtil.getSavedConfig(this);
         mIsNightMode = mConfig != null && mConfig.isNightMode();
         initViews();
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     private void initViews() {
