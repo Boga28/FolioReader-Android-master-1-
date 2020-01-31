@@ -55,6 +55,16 @@
         android:paddingBottom="2dp"
         android:visibility="visible">
 
+        <com.google.android.gms.ads.AdView
+            android:layout_gravity="center"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        </com.google.android.gms.ads.AdView>
 
         <TextView
             android:id="@+id/minutesLeft"
