@@ -317,9 +317,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             mAdView = findViewById(R.id.adView)
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
-        if (mRewardedVideoAd.isLoaded) {
-            mRewardedVideoAd.show()
-        }
+
 
     }
     private fun loadRewardedVideoAd() {
@@ -395,7 +393,9 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         UiUtil.setColorIntToDrawable(config.themeColor, menu.findItem(R.id.itemSearch).icon)
         UiUtil.setColorIntToDrawable(config.themeColor, menu.findItem(R.id.itemConfig).icon)
         UiUtil.setColorIntToDrawable(config.themeColor, menu.findItem(R.id.itemTts).icon)
-
+        if (mRewardedVideoAd.isLoaded) {
+            mRewardedVideoAd.show()
+        }
         if (!config.isShowTts)
             menu.findItem(R.id.itemTts).isVisible = false
 
