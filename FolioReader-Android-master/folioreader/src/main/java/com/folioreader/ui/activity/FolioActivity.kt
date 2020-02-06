@@ -1092,12 +1092,12 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
     override fun onRewardedVideoAdLeftApplication() {
         Toast.makeText(this, "onRewardedVideoAdLeftApplication", Toast.LENGTH_SHORT).show()
-        
+
     }
 
     override fun onRewardedVideoAdClosed() {
         Toast.makeText(this, "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show()
-
+        onDestroy()
     }
 
     override fun onRewardedVideoAdFailedToLoad(errorCode: Int) {
