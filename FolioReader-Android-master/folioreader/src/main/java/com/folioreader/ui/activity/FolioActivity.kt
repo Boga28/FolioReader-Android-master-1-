@@ -874,11 +874,6 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        FolioReader.clear()
-    }
-
     override fun getCurrentChapterIndex(): Int {
         return currentChapterIndex
     }
