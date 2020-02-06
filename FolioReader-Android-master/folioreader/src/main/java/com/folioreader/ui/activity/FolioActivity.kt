@@ -873,6 +873,11 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        FolioReader.clear()
+    }
+
     override fun getCurrentChapterIndex(): Int {
         return currentChapterIndex
     }
@@ -1097,7 +1102,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
     override fun onRewardedVideoAdClosed() {
         Toast.makeText(this, "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show()
-        onDestroy()
+        onBackPressed()
     }
 
     override fun onRewardedVideoAdFailedToLoad(errorCode: Int) {
