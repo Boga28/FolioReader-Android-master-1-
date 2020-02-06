@@ -32,7 +32,10 @@ import android.os.Handler
 import android.text.TextUtils
 import android.util.DisplayMetrics
 import android.util.Log
-import android.view.*
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
@@ -76,7 +79,6 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
-import kotlinx.android.synthetic.main.custom_toast.*
 
 
 class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControllerCallback,
@@ -1095,19 +1097,14 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
     }
 
     override fun onRewardedVideoAdLeftApplication() {
-        Toast.makeText(this, "onRewardedVideoAdLeftApplication", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "onRewardedVideoAdLeftApplication", Toast.LENGTH_SHORT).show()
+        onBackPressed()
+        Toast.makeText(this, "Please Watch the Ad. Dont Close Ads!", Toast.LENGTH_LONG).show()
 
     }
 
     override fun onRewardedVideoAdClosed() {
        // Toast.makeText(this, "Please Watch the ads. Don't Close Ads.", Toast.LENGTH_LONG).show()
-        onBackPressed()
-        val layout = layoutInflater.inflate(R.layout.custom_toast,linearLayout)
-        val myToast = Toast(applicationContext)
-        myToast.duration = Toast.LENGTH_LONG
-        myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
-        myToast.view = layout//setting the view of custom toast layout
-        myToast.show()
     }
 
     override fun onRewardedVideoAdFailedToLoad(errorCode: Int) {
