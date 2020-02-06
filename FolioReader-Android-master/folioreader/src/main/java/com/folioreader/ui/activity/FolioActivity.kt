@@ -32,10 +32,7 @@ import android.os.Handler
 import android.text.TextUtils
 import android.util.DisplayMetrics
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.WindowManager
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
@@ -79,6 +76,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
+import kotlinx.android.synthetic.main.custom_toast.*
 
 
 class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControllerCallback,
@@ -252,8 +250,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
         // Need to add when vector drawables support library is used.
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
-        //Custom Toast Message
-        val layout = layoutInflater.inflate(R.layout.custom_toast,linearLayout)
+
         //Ödüllü Reklam
         MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713")
         // Use an activity context to get the rewarded video instance.
@@ -1104,6 +1101,8 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
     override fun onRewardedVideoAdClosed() {
        // Toast.makeText(this, "Please Watch the ads. Don't Close Ads.", Toast.LENGTH_LONG).show()
         onBackPressed()
+        //Custom Toast Message
+        val layout = layoutInflater.inflate(R.layout.custom_toast,linearLayout)
         val myToast = Toast(applicationContext)
         myToast.duration = Toast.LENGTH_LONG
         myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
