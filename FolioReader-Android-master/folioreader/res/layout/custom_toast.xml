@@ -19,7 +19,5 @@
         android:text="Please Watch the ads. Don't Close Ads."
         android:textColor="@color/red"
         android:textSize="17sp"
-        android:textStyle="bold"
-        android:hint="If you want to read book, please watch the Ads."
-        />
+        android:textStyle="bold" />
 </LinearLayout>

@@ -250,6 +250,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
         // Need to add when vector drawables support library is used.
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+        //Custom Toast Message
 
         //Ödüllü Reklam
         MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713")
@@ -1101,7 +1102,6 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
     override fun onRewardedVideoAdClosed() {
        // Toast.makeText(this, "Please Watch the ads. Don't Close Ads.", Toast.LENGTH_LONG).show()
         onBackPressed()
-        //Custom Toast Message
         val layout = layoutInflater.inflate(R.layout.custom_toast,linearLayout)
         val myToast = Toast(applicationContext)
         myToast.duration = Toast.LENGTH_LONG
