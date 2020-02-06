@@ -78,11 +78,11 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
-
+import com.google.android.gms.ads.reward.RewardedVideoAdListener
 
 
 class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControllerCallback,
-    View.OnSystemUiVisibilityChangeListener {
+    View.OnSystemUiVisibilityChangeListener, RewardedVideoAdListener {
     lateinit var mAdView : AdView
     private lateinit var mRewardedVideoAd: RewardedVideoAd
     private var bookFileName: String? = null
@@ -1087,18 +1087,17 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         }
     }
     override fun onRewarded(reward: RewardItem) {
-        Toast.makeText(this, "onRewarded! currency: ${reward.type} amount: ${reward.amount}",
-            Toast.LENGTH_SHORT).show()
-        // Reward the user.
+
     }
 
     override fun onRewardedVideoAdLeftApplication() {
         Toast.makeText(this, "onRewardedVideoAdLeftApplication", Toast.LENGTH_SHORT).show()
+        
     }
 
     override fun onRewardedVideoAdClosed() {
         Toast.makeText(this, "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show()
-        onDestroy()
+
     }
 
     override fun onRewardedVideoAdFailedToLoad(errorCode: Int) {
