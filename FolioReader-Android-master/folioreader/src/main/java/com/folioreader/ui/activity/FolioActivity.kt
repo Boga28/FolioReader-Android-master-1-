@@ -76,11 +76,15 @@ import java.lang.ref.WeakReference
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.reward.RewardItem
+import com.google.android.gms.ads.reward.RewardedVideoAd
+
 
 
 class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControllerCallback,
     View.OnSystemUiVisibilityChangeListener {
     lateinit var mAdView : AdView
+    private lateinit var mRewardedVideoAd: RewardedVideoAd
     private var bookFileName: String? = null
 
     private var mFolioPageViewPager: DirectionalViewpager? = null
@@ -249,7 +253,12 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         // Need to add when vector drawables support library is used.
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
-
+        //Ödüllü Reklam
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713")
+        // Use an activity context to get the rewarded video instance.
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
+        mRewardedVideoAd.rewardedVideoAdListener = this
+        loadRewardedVideoAd()
 
         handler = Handler()
         val display = windowManager.defaultDisplay
@@ -307,6 +316,11 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
 
+    }
+    // Ödüllü Reklam
+    private fun loadRewardedVideoAd() {
+        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
+            AdRequest.Builder().build())
     }
 
     private fun initActionBar() {
@@ -1071,5 +1085,42 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
                 bundle?.putParcelable(FolioPageFragment.BUNDLE_SEARCH_LOCATOR, null)
             }
         }
+    }
+    override fun onRewarded(reward: RewardItem) {
+        Toast.makeText(this, "onRewarded! currency: ${reward.type} amount: ${reward.amount}",
+            Toast.LENGTH_SHORT).show()
+        // Reward the user.
+    }
+
+    override fun onRewardedVideoAdLeftApplication() {
+        Toast.makeText(this, "onRewardedVideoAdLeftApplication", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRewardedVideoAdClosed() {
+        Toast.makeText(this, "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show()
+        onDestroy()
+    }
+
+    override fun onRewardedVideoAdFailedToLoad(errorCode: Int) {
+        Toast.makeText(this, "onRewardedVideoAdFailedToLoad", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRewardedVideoAdLoaded() {
+        Toast.makeText(this, "onRewardedVideoAdLoaded", Toast.LENGTH_SHORT).show()
+        if (mRewardedVideoAd.isLoaded) {
+            mRewardedVideoAd.show()
+        }
+    }
+
+    override fun onRewardedVideoAdOpened() {
+        Toast.makeText(this, "onRewardedVideoAdOpened", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRewardedVideoStarted() {
+        Toast.makeText(this, "onRewardedVideoStarted", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRewardedVideoCompleted() {
+        Toast.makeText(this, "onRewardedVideoCompleted", Toast.LENGTH_SHORT).show()
     }
 }
