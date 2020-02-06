@@ -1108,25 +1108,25 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
     }
 
     override fun onRewardedVideoAdFailedToLoad(errorCode: Int) {
-        Toast.makeText(this, "onRewardedVideoAdFailedToLoad", Toast.LENGTH_SHORT).show()
+       // Toast.makeText(this, "onRewardedVideoAdFailedToLoad", Toast.LENGTH_SHORT).show()
     }
 
     override fun onRewardedVideoAdLoaded() {
-        Toast.makeText(this, "onRewardedVideoAdLoaded", Toast.LENGTH_SHORT).show()
+   //     Toast.makeText(this, "onRewardedVideoAdLoaded", Toast.LENGTH_SHORT).show()
         if (mRewardedVideoAd.isLoaded) {
             mRewardedVideoAd.show()
         }
     }
 
     override fun onRewardedVideoAdOpened() {
-        Toast.makeText(this, "onRewardedVideoAdOpened", Toast.LENGTH_SHORT).show()
+       // Toast.makeText(this, "onRewardedVideoAdOpened", Toast.LENGTH_SHORT).show()
     }
 
     override fun onRewardedVideoStarted() {
-        Toast.makeText(this, "onRewardedVideoStarted", Toast.LENGTH_SHORT).show()
+      //  Toast.makeText(this, "onRewardedVideoStarted", Toast.LENGTH_SHORT).show()
     }
 
     override fun onRewardedVideoCompleted() {
-        Toast.makeText(this, "onRewardedVideoCompleted", Toast.LENGTH_SHORT).show()
+        // Toast.makeText(this, "onRewardedVideoCompleted", Toast.LENGTH_SHORT).show()
     }
 }
