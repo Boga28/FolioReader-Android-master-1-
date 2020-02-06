@@ -1098,15 +1098,13 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
     override fun onRewardedVideoAdLeftApplication() {
         //Toast.makeText(this, "onRewardedVideoAdLeftApplication", Toast.LENGTH_SHORT).show()
-        onBackPressed()
-        Toast.makeText(this, "Please Watch the Ad. Dont Close Ads!", Toast.LENGTH_LONG).show()
+
 
     }
 
     override fun onRewardedVideoAdClosed() {
        // Toast.makeText(this, "Please Watch the ads. Don't Close Ads.", Toast.LENGTH_LONG).show()
-        onBackPressed()
-        Toast.makeText(this, "Please Watch the Ad. Dont Close Ads!", Toast.LENGTH_LONG).show()
+
     }
 
     override fun onRewardedVideoAdFailedToLoad(errorCode: Int) {
@@ -1130,6 +1128,5 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
     override fun onRewardedVideoCompleted() {
         Toast.makeText(this, "onRewardedVideoCompleted", Toast.LENGTH_SHORT).show()
-        mRewardedVideoAd.destroy(this)
     }
 }
