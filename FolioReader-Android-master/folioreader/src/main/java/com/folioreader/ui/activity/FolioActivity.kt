@@ -255,7 +255,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         //Custom Toast Message
 
         //Ödüllü Reklam
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713")
+        MobileAds.initialize(this, "ca-app-pub-3405044999727097~1425369330")
         // Use an activity context to get the rewarded video instance.
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
         mRewardedVideoAd.rewardedVideoAdListener = this
@@ -320,7 +320,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
     }
     // Ödüllü Reklam
     private fun loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
+        mRewardedVideoAd.loadAd("ca-app-pub-3405044999727097/9904285650",
             AdRequest.Builder().build())
     }
 
