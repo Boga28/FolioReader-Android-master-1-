@@ -82,9 +82,9 @@ import com.google.android.gms.ads.reward.RewardItem
 
 
 class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControllerCallback,
-    View.OnSystemUiVisibilityChangeListener,
+    View.OnSystemUiVisibilityChangeListener
     //Odullu Reklam için
-    /* RewardedVideoAdListener */       {
+    /* ,RewardedVideoAdListener */       {
     lateinit var mAdView : AdView
     //private lateinit var mRewardedVideoAd: RewardedVideoAd
     private var bookFileName: String? = null
