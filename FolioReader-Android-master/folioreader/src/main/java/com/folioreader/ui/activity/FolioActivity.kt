@@ -77,14 +77,16 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
-import com.google.android.gms.ads.reward.RewardedVideoAd
-import com.google.android.gms.ads.reward.RewardedVideoAdListener
+//import com.google.android.gms.ads.reward.RewardedVideoAd
+//import com.google.android.gms.ads.reward.RewardedVideoAdListener
 
 
 class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControllerCallback,
-    View.OnSystemUiVisibilityChangeListener, RewardedVideoAdListener {
+    View.OnSystemUiVisibilityChangeListener,
+    //Odullu Reklam için
+    /* RewardedVideoAdListener */       {
     lateinit var mAdView : AdView
-    private lateinit var mRewardedVideoAd: RewardedVideoAd
+    //private lateinit var mRewardedVideoAd: RewardedVideoAd
     private var bookFileName: String? = null
 
     private var mFolioPageViewPager: DirectionalViewpager? = null
@@ -255,11 +257,12 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         //Custom Toast Message
 
         //Ödüllü Reklam
-        MobileAds.initialize(this, "ca-app-pub-3405044999727097~1425369330")
+       /* MobileAds.initialize(this, "ca-app-pub-3405044999727097~1425369330")
         // Use an activity context to get the rewarded video instance.
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
         mRewardedVideoAd.rewardedVideoAdListener = this
         loadRewardedVideoAd()
+        */
 
         handler = Handler()
         val display = windowManager.defaultDisplay
@@ -319,10 +322,11 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
     }
     // Ödüllü Reklam
-    private fun loadRewardedVideoAd() {
+   /* private fun loadRewardedVideoAd() {
         mRewardedVideoAd.loadAd("ca-app-pub-3405044999727097/9904285650",
             AdRequest.Builder().build())
     }
+    */
 
     private fun initActionBar() {
 
@@ -1087,6 +1091,8 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             }
         }
     }
+    // Ödüllü Reklam
+    /*
     override fun onRewarded(reward: RewardItem) {
 
     }
@@ -1124,4 +1130,5 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
     override fun onRewardedVideoCompleted() {
         // Toast.makeText(this, "onRewardedVideoCompleted", Toast.LENGTH_SHORT).show()
     }
+     */
 }
