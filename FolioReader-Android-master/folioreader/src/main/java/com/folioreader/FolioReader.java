@@ -66,10 +66,8 @@ public class FolioReader {
          */
         void onFolioReaderClosed();
     }
-    try{
-        DetayActivity AudioLink = new DetayActivity();
-        Toast.makeText(getApplicationContext(), AudioLink + " Burası Folioreader link alındı", Toast.LENGTH_LONG).show();
-    }catch(Exception e){ }
+
+
     private BroadcastReceiver highlightReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -134,27 +132,19 @@ public class FolioReader {
 
     public FolioReader openBook(String assetOrSdcardPath) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
-        try{
-        intent.putExtra("auido link",AudioLink.audioLink());
-        }catch(Exception e){ }
+        intent.putExtra("auido link","Taha Kırca");
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(int rawId) {
         Intent intent = getIntentFromUrl(null, rawId);
-        try{
-            intent.putExtra("auido link",AudioLink.audioLink());
-        }catch(Exception e){ }
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(String assetOrSdcardPath, String bookId) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
-        try{
-            intent.putExtra("auido link",AudioLink.audioLink());
-        }catch(Exception e){ }
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
@@ -162,9 +152,6 @@ public class FolioReader {
 
     public FolioReader openBook(int rawId, String bookId) {
         Intent intent = getIntentFromUrl(null, rawId);
-        try{
-            intent.putExtra("auido link",AudioLink.audioLink());
-        }catch(Exception e){ }
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
@@ -178,9 +165,6 @@ public class FolioReader {
         intent.putExtra(Config.EXTRA_OVERRIDE_CONFIG, overrideConfig);
         intent.putExtra(EXTRA_PORT_NUMBER, portNumber);
         intent.putExtra(FolioActivity.EXTRA_READ_LOCATOR, (Parcelable) readLocator);
-        try{
-            intent.putExtra("auido link",AudioLink.audioLink());
-        }catch(Exception e){ }
 
         if (rawId != 0) {
             intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, rawId);

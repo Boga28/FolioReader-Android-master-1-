@@ -300,12 +300,6 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
         initActionBar()
         initMediaController()
-        /*
-        val bundle :Bundle ?=intent.extras
-        if (bundle!=null){
-            val audioLink = bundle.getString("auido link")
-        }
-        */
 
 
         if (ContextCompat.checkSelfPermission(
@@ -325,9 +319,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             mAdView = findViewById(R.id.adView)
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
-        /*val toast = Toast.makeText(applicationContext, audioLink, Toast.LENGTH_LONG)
-        toast.show()
-         */
+
     }
     // Ödüllü Reklam
    /* private fun loadRewardedVideoAd() {
