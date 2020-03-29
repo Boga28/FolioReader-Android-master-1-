@@ -66,6 +66,8 @@ public class FolioReader {
          */
         void onFolioReaderClosed();
     }
+    DetayActivity AudioLink = new DetayActivity();
+    Toast.makeText(getApplicationContext() , AudioLink + " Burası Folioreader link alındı" , Toast.LENGTH_LONG).show();
 
     private BroadcastReceiver highlightReceiver = new BroadcastReceiver() {
         @Override
@@ -131,18 +133,21 @@ public class FolioReader {
 
     public FolioReader openBook(String assetOrSdcardPath) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
+        intent.putExtra("auido link",AudioLink.audioLink());
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(int rawId) {
         Intent intent = getIntentFromUrl(null, rawId);
+        intent.putExtra("auido link",AudioLink.audioLink());
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(String assetOrSdcardPath, String bookId) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
+        intent.putExtra("auido link",AudioLink.audioLink());
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
@@ -150,6 +155,7 @@ public class FolioReader {
 
     public FolioReader openBook(int rawId, String bookId) {
         Intent intent = getIntentFromUrl(null, rawId);
+        intent.putExtra("auido link",AudioLink.audioLink());
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;

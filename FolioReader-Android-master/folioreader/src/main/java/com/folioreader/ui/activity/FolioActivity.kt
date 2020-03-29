@@ -90,7 +90,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
     private var bookFileName: String? = null
 
     private var mFolioPageViewPager: DirectionalViewpager? = null
-    private var actionBar: ActionBar? = null
+    private var actionBar: ActionBar? =Bundle  null
     private var appBarLayout: FolioAppBarLayout? = null
     private var toolbar: Toolbar? = null
     private var distractionFreeMode: Boolean = false
@@ -300,6 +300,12 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
         initActionBar()
         initMediaController()
+        /*
+        val bundle :Bundle ?=intent.extras
+        if (bundle!=null){
+            val audioLink = bundle.getString("auido link")
+        }
+        */
 
 
         if (ContextCompat.checkSelfPermission(
@@ -319,7 +325,9 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             mAdView = findViewById(R.id.adView)
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
-
+        /*val toast = Toast.makeText(applicationContext, audioLink, Toast.LENGTH_LONG)
+        toast.show()
+         */
     }
     // Ödüllü Reklam
    /* private fun loadRewardedVideoAd() {
