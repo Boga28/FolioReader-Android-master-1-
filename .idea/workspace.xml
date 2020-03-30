@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="457493c8-3185-4050-8942-a6a5c2a7ec21" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,21 +16,12 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1014">
-              <caret line="251" column="22" selection-start-line="251" selection-start-column="17" selection-end-line="251" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="204">
+              <caret line="142" column="51" lean-forward="true" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -54,8 +45,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java" />
         <option value="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt" />
+        <option value="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java" />
       </list>
     </option>
   </component>
@@ -80,6 +71,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -161,29 +153,15 @@
               <item name="folioreader" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="FolioReader-Android-master (1)" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FolioReader-Android-master (1)" type="462c0819:PsiDirectoryNode" />
-              <item name="FolioReader-Android-master" type="462c0819:PsiDirectoryNode" />
-              <item name="folioreader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="folioreader" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="activity" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/English Story in Levels - Kopya (2)" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/English Story in Levels - Kopya (3)" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
@@ -215,21 +193,21 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.20461309" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="Resources Explorer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20461309" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Resources Explorer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -240,17 +218,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java">
+    <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="442">
+          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/FolioReader-Android-master (1).iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1014">
+        <state relative-caret-position="17">
           <caret line="251" column="22" selection-start-line="251" selection-start-column="17" selection-end-line="251" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="142" column="51" lean-forward="true" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="51" />
         </state>
       </provider>
     </entry>
