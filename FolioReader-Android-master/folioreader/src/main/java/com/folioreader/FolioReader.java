@@ -118,7 +118,7 @@ public class FolioReader {
     protected DetayActivity detayActivity =new DetayActivity();
 
     public DetayActivity getDetayActivity() {
-        public static String auido = detayActivity.auidoo;
+        String auido = detayActivity.auidoo();
         return auido;
     }
 
