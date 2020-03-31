@@ -115,8 +115,9 @@ public class FolioReader {
         return singleton;
     }
 
-        public audioLink (String audilnk){
-        return audilnk;
+        public String audioLink (String audilnk){
+        String  audilnk1=audilnk;
+        return audilnk1;
         }
 
     private FolioReader() {
