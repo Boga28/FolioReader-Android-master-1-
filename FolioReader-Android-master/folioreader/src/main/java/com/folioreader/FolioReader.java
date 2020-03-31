@@ -114,10 +114,6 @@ public class FolioReader {
         return singleton;
     }
 
-    public void getAudioLink(String audioLink) {
-        String audioLink1=audioLink;
-        return audioLink1;
-    }
 
     private FolioReader() {
     }
