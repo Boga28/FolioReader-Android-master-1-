@@ -114,13 +114,7 @@ public class FolioReader {
         return singleton;
     }
 
-    @Nullable
-    protected DetayActivity detayActivity =new DetayActivity();
 
-    public DetayActivity getDetayActivity() {
-        String auido = detayActivity.auidoo();
-        return auido;
-    }
 
     private FolioReader() {
     }
@@ -140,21 +134,18 @@ public class FolioReader {
 
     public FolioReader openBook(String assetOrSdcardPath) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
-        intent.putExtra("auido link",getDetayActivity());
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(int rawId) {
         Intent intent = getIntentFromUrl(null, rawId);
-        intent.putExtra("auido link",getDetayActivity());
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(String assetOrSdcardPath, String bookId) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
-        intent.putExtra("auido link",getDetayActivity());
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
@@ -162,14 +153,12 @@ public class FolioReader {
 
     public FolioReader openBook(int rawId, String bookId) {
         Intent intent = getIntentFromUrl(null, rawId);
-        intent.putExtra("auido link",getDetayActivity());
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
     }
 
     private Intent getIntentFromUrl(String assetOrSdcardPath, int rawId) {
-        intent.putExtra("auido link",getDetayActivity());
         Intent intent = new Intent(context, FolioActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra(Config.INTENT_CONFIG, config);
@@ -202,6 +191,11 @@ public class FolioReader {
      *                       config if it is null in application context or will fetch previously
      *                       saved one while execution.
      */
+
+    public FolioReader getAudioLink(String audioLink) {
+        audioLink1=audioLink;
+        return audioLink1;
+    }
     public FolioReader setConfig(Config config, boolean overrideConfig) {
         this.config = config;
         this.overrideConfig = overrideConfig;
