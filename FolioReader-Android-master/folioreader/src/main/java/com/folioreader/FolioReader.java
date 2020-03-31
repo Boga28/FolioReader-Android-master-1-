@@ -114,7 +114,10 @@ public class FolioReader {
         return singleton;
     }
 
-
+    public void getAudioLink(String audioLink) {
+        String audioLink1=audioLink;
+        return audioLink1;
+    }
 
     private FolioReader() {
     }
@@ -192,10 +195,7 @@ public class FolioReader {
      *                       saved one while execution.
      */
 
-    public FolioReader getAudioLink(String audioLink) {
-        String audioLink1=audioLink;
-        return audioLink1;
-    }
+
     public FolioReader setConfig(Config config, boolean overrideConfig) {
         this.config = config;
         this.overrideConfig = overrideConfig;
