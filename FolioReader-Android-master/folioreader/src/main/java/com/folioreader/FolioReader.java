@@ -37,6 +37,7 @@ public class FolioReader {
     private static FolioReader singleton = null;
 
     public static final String EXTRA_BOOK_ID = "com.folioreader.extra.BOOK_ID";
+    public static final String EXTRA_AUDIO = "com.folioreader.extra.AUDIO";
     public static final String EXTRA_READ_LOCATOR = "com.folioreader.extra.READ_LOCATOR";
     public static final String EXTRA_PORT_NUMBER = "com.folioreader.extra.PORT_NUMBER";
     public static final String ACTION_SAVE_READ_LOCATOR = "com.folioreader.action.SAVE_READ_LOCATOR";
@@ -113,7 +114,9 @@ public class FolioReader {
         }
         return singleton;
     }
-    
+
+
+
     private FolioReader() {
     }
 
@@ -130,32 +133,28 @@ public class FolioReader {
                 new IntentFilter(ACTION_FOLIOREADER_CLOSED));
     }
 
-    public FolioReader openBook(String assetOrSdcardPath, audioLink) {
+    public FolioReader openBook(String assetOrSdcardPath , audioLink) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
-        intent.putExtra("auidoLin1k", audioLink);
-
+        intent.putExtra( EXTRA_AUDIO , audioLink);
         context.startActivity(intent);
         return singleton;
     }
 
-    public FolioReader openBook(int rawId , audioLink) {
+    public FolioReader openBook(int rawId) {
         Intent intent = getIntentFromUrl(null, rawId);
-        intent.putExtra("auidoLin1k", audioLink);
         context.startActivity(intent);
         return singleton;
     }
 
-    public FolioReader openBook(String assetOrSdcardPath, String bookId, audioLink) {
+    public FolioReader openBook(String assetOrSdcardPath, String bookId) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
-        intent.putExtra("auidoLin1k", audioLink);
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
     }
 
-    public FolioReader openBook(int rawId, String bookId, audioLink) {
+    public FolioReader openBook(int rawId, String bookId) {
         Intent intent = getIntentFromUrl(null, rawId);
-        intent.putExtra("auidoLin1k", audioLink);
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
