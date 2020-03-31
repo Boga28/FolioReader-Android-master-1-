@@ -138,18 +138,21 @@ public class FolioReader {
 
     public FolioReader openBook(String assetOrSdcardPath) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
+        intent.putExtra( EXTRA_AUDIO , audioLink);
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(int rawId) {
         Intent intent = getIntentFromUrl(null, rawId);
+        intent.putExtra( EXTRA_AUDIO , audioLink);
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(String assetOrSdcardPath, String bookId) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
+        intent.putExtra( EXTRA_AUDIO , audioLink);
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
@@ -157,6 +160,7 @@ public class FolioReader {
 
     public FolioReader openBook(int rawId, String bookId) {
         Intent intent = getIntentFromUrl(null, rawId);
+        intent.putExtra( EXTRA_AUDIO , audioLink);
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
@@ -165,6 +169,7 @@ public class FolioReader {
     private Intent getIntentFromUrl(String assetOrSdcardPath, int rawId) {
         Intent intent = new Intent(context, FolioActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra( EXTRA_AUDIO , audioLink);
         intent.putExtra(Config.INTENT_CONFIG, config);
         intent.putExtra(Config.EXTRA_OVERRIDE_CONFIG, overrideConfig);
         intent.putExtra(EXTRA_PORT_NUMBER, portNumber);
