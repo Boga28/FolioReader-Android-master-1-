@@ -114,6 +114,10 @@ public class FolioReader {
         return singleton;
     }
 
+    public void SETAudioLink(String audioLink) {
+
+        return audioLink;
+    }
 
     private FolioReader() {
     }
@@ -131,26 +135,26 @@ public class FolioReader {
                 new IntentFilter(ACTION_FOLIOREADER_CLOSED));
     }
 
-    public FolioReader openBook(String assetOrSdcardPath) {
+    public FolioReader openBook(String assetOrSdcardPath, audioLink) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
         context.startActivity(intent);
         return singleton;
     }
 
     public FolioReader openBook(int rawId) {
-        Intent intent = getIntentFromUrl(null, rawId);
+        Intent intent = getIntentFromUrl(null, rawId , audioLink);
         context.startActivity(intent);
         return singleton;
     }
 
-    public FolioReader openBook(String assetOrSdcardPath, String bookId) {
+    public FolioReader openBook(String assetOrSdcardPath, String bookId, audioLink) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
         return singleton;
     }
 
-    public FolioReader openBook(int rawId, String bookId) {
+    public FolioReader openBook(int rawId, String bookId, audioLink) {
         Intent intent = getIntentFromUrl(null, rawId);
         intent.putExtra(EXTRA_BOOK_ID, bookId);
         context.startActivity(intent);
