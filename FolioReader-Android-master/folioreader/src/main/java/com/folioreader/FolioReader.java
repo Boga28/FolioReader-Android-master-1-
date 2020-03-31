@@ -115,7 +115,9 @@ public class FolioReader {
         return singleton;
     }
 
-
+        public audioLink (String audilnk){
+        return audilnk;
+        }
 
     private FolioReader() {
     }
@@ -133,9 +135,8 @@ public class FolioReader {
                 new IntentFilter(ACTION_FOLIOREADER_CLOSED));
     }
 
-    public FolioReader openBook(String assetOrSdcardPath , audioLink) {
+    public FolioReader openBook(String assetOrSdcardPath) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
-        intent.putExtra( EXTRA_AUDIO , audioLink);
         context.startActivity(intent);
         return singleton;
     }
