@@ -193,7 +193,7 @@ public class FolioReader {
      */
 
     public FolioReader getAudioLink(String audioLink) {
-        audioLink1=audioLink;
+        String audioLink1=audioLink;
         return audioLink1;
     }
     public FolioReader setConfig(Config config, boolean overrideConfig) {
