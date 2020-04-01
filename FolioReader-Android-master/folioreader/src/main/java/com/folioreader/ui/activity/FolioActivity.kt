@@ -292,22 +292,20 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             searchAdapterDataBundle = savedInstanceState.getBundle(SearchAdapter.DATA_BUNDLE)
             searchQuery = savedInstanceState.getCharSequence(SearchActivity.BUNDLE_SAVE_SEARCH_QUERY)
         }
-        try {
-        mAudioLink= intent.getStringExtra(com.folioreader.FolioReader.EXTRA_AUDIO)
-        mAudioLink1= intent.getStringExtra(com.folioreader.FolioReader.EXTRA_AUDIO1)
+
+        mAudioLink= intent.getStringExtra(FolioReader.EXTRA_AUDIO)
+        mAudioLink1= intent.getStringExtra(FolioReader.EXTRA_AUDIO1)
         mAudioLink2= intent.getStringExtra("audio")
         mAudioLink3= intent.getStringExtra("audio1")
-            Log.d(LOG_TAG, mAudioLink)
-            Log.d(LOG_TAG, mAudioLink1)
-            Log.d(LOG_TAG, mAudioLink2)
-            Log.d(LOG_TAG, mAudioLink3)
-            Log.i("Audio Link :  ", mAudioLink)
-            Log.i("Audio Link :  ", mAudioLink1)
-            Log.i("Audio Link :  ", mAudioLink2)
-            Log.i("Audio Link :  ", mAudioLink3)
-        } catch (e: Exception) {
-                
-        }
+            Log.e(LOG_TAG, mAudioLink)
+            Log.e(LOG_TAG, mAudioLink1)
+            Log.e(LOG_TAG, mAudioLink2)
+            Log.e(LOG_TAG, mAudioLink3)
+            Log.e("Audio Link :  ", mAudioLink)
+            Log.e("Audio Link :  ", mAudioLink1)
+            Log.e("Audio Link :  ", mAudioLink2)
+            Log.e("Audio Link :  ", mAudioLink3)
+
 
 
 
