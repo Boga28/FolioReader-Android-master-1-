@@ -140,7 +140,7 @@ public class FolioReader {
 
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
         intent.putExtra("audio", audioLink);
-        android.widget.Toast.makeText(this, audioLink, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, audioLink, Toast.LENGTH_LONG).show();
         context.startActivity(intent);
         return singleton;
     }
