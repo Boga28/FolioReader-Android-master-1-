@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="457493c8-3185-4050-8942-a6a5c2a7ec21" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="42" />
+            <state relative-caret-position="499">
+              <caret line="163" column="4" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
@@ -54,13 +53,14 @@
       <find>public</find>
       <find>BroadcastReceiver</find>
       <find>bookId</find>
-      <find>audioLink</find>
       <find>getIntentFromUrl</find>
       <find>extra</find>
       <find>singleton</find>
       <find>BookID</find>
       <find>intent</find>
       <find>mBookId</find>
+      <find>audioLink(</find>
+      <find>audioLink</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,8 +70,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/FolioReader-Android-master/folioreader/build.gradle" />
-        <option value="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java" />
         <option value="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt" />
+        <option value="$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java" />
       </list>
     </option>
   </component>
@@ -303,20 +303,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/ui/activity/FolioActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="935" column="40" selection-start-line="935" selection-start-column="33" selection-end-line="935" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FolioReader-Android-master/folioreader/src/main/java/com/folioreader/FolioReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="163" column="4" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
