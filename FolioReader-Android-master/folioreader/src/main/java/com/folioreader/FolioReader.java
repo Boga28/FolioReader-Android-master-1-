@@ -161,7 +161,7 @@ public class FolioReader {
         context.startActivity(intent);
         return singleton;
     }
-    
+
     */
 
     public FolioReader openBook(int rawId, String bookId) {
