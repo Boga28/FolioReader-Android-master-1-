@@ -305,8 +305,8 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             Log.i("Audio Link :  ", mAudioLink1)
             Log.i("Audio Link :  ", mAudioLink2)
             Log.i("Audio Link :  ", mAudioLink3)
-        } catch (Exception e) {
-           
+        } catch (e: Exception) {
+                
         }
 
 
