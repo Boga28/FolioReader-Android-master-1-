@@ -322,9 +322,9 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             mAdView = findViewById(R.id.adView)
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
-        Toast.makeText(this, "AudioLink"), Toast.LENGTH_SHORT).show()
-
-        Toast.makeText(this, mAudioLink), Toast.LENGTH_LONG).show()
+                 toast(this, mAudioLink.toString())
+               // Toast.makeText(this, "AudioLink"), Toast.LENGTH_SHORT).show()
+                 //Toast.makeText(this,mAudioLink), Toast.LENGTH_LONG).show()
     }
     // Ödüllü Reklam
    /* private fun loadRewardedVideoAd() {
@@ -332,6 +332,9 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             AdRequest.Builder().build())
     }
     */
+    fun Context.toast(context: Context = applicationContext, message: String, duration: Int = Toast.LENGTH_SHORT){
+        Toast.makeText(context, message , duration).show()
+    }
 
     private fun initActionBar() {
 
