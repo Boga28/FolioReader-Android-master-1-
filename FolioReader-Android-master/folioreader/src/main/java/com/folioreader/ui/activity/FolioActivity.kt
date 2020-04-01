@@ -334,9 +334,9 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
                  toast(this, mAudioLink.toString())
+                 toast(this, mAudioLink1.toString())
                  toast(this, mAudioLink2.toString())
                  toast(this, mAudioLink3.toString())
-                 toast(this, mAudioLink4.toString())
                // Toast.makeText(this, "AudioLink"), Toast.LENGTH_SHORT).show()
                  //Toast.makeText(this,mAudioLink), Toast.LENGTH_LONG).show()
     }
