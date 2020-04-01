@@ -292,14 +292,24 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             searchAdapterDataBundle = savedInstanceState.getBundle(SearchAdapter.DATA_BUNDLE)
             searchQuery = savedInstanceState.getCharSequence(SearchActivity.BUNDLE_SAVE_SEARCH_QUERY)
         }
+        try {
         mAudioLink= intent.getStringExtra(com.folioreader.FolioReader.EXTRA_AUDIO)
         mAudioLink1= intent.getStringExtra(com.folioreader.FolioReader.EXTRA_AUDIO1)
         mAudioLink2= intent.getStringExtra("audio")
         mAudioLink3= intent.getStringExtra("audio1")
-        Log.v(LOG_TAG, mAudioLink)
-        Log.v(LOG_TAG, mAudioLink1)
-        Log.v(LOG_TAG, mAudioLink2)
-        Log.v(LOG_TAG, mAudioLink3)
+            Log.d(LOG_TAG, mAudioLink)
+            Log.d(LOG_TAG, mAudioLink1)
+            Log.d(LOG_TAG, mAudioLink2)
+            Log.d(LOG_TAG, mAudioLink3)
+            Log.i("Audio Link :  ", mAudioLink)
+            Log.i("Audio Link :  ", mAudioLink1)
+            Log.i("Audio Link :  ", mAudioLink2)
+            Log.i("Audio Link :  ", mAudioLink3)
+        } catch (Exception e) {
+            String msg = (e.getMessage() == null) ? "image load failed!" :e.getMessage();
+            Log.i("image load error", msg);
+        }
+
 
 
         mBookId = intent.getStringExtra(FolioReader.EXTRA_BOOK_ID)
