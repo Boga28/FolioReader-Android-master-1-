@@ -289,7 +289,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             searchAdapterDataBundle = savedInstanceState.getBundle(SearchAdapter.DATA_BUNDLE)
             searchQuery = savedInstanceState.getCharSequence(SearchActivity.BUNDLE_SAVE_SEARCH_QUERY)
         }
-        mAudioLink= intent.getStringExtra(“audio”)
+        mAudioLink= intent.getStringExtra("audio")
 
         mBookId = intent.getStringExtra(FolioReader.EXTRA_BOOK_ID)
         //mAudioLink = intent.getStringExtra("audio")
