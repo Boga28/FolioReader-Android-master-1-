@@ -37,7 +37,6 @@ public class FolioReader {
     private static FolioReader singleton = null;
 
     public static final String EXTRA_BOOK_ID = "com.folioreader.extra.BOOK_ID";
-    public static final String EXTRA_AUDIO = "com.folioreader.extra.AUDIO";
     public static final String EXTRA_READ_LOCATOR = "com.folioreader.extra.READ_LOCATOR";
     public static final String EXTRA_PORT_NUMBER = "com.folioreader.extra.PORT_NUMBER";
     public static final String ACTION_SAVE_READ_LOCATOR = "com.folioreader.action.SAVE_READ_LOCATOR";
@@ -138,8 +137,10 @@ public class FolioReader {
     }
 
     public FolioReader openBook(String assetOrSdcardPath , String audioLink) {
+
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
-        intent.putExtra(EXTRA_BOOK_ID, audioLink);
+        intent.putExtra("audio", audioLink);
+        toast(this, mAudioLink.toString())
         context.startActivity(intent);
         return singleton;
     }
@@ -311,5 +312,8 @@ public class FolioReader {
         localBroadcastManager.unregisterReceiver(highlightReceiver);
         localBroadcastManager.unregisterReceiver(readLocatorReceiver);
         localBroadcastManager.unregisterReceiver(closedReceiver);
+    }
+    fun Context.toast(context: Context = applicationContext, message: String, duration: Int = Toast.LENGTH_SHORT){
+        Toast.makeText(context, message , duration).show()
     }
 }
