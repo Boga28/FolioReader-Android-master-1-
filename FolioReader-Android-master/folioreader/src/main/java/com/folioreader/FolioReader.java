@@ -140,7 +140,7 @@ public class FolioReader {
 
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
         intent.putExtra("audio", audioLink);
-        toast(this, mAudioLink.toString())
+        android.widget.Toast.makeText(this, audioLink, Toast.LENGTH_SHORT).show();
         context.startActivity(intent);
         return singleton;
     }
@@ -313,7 +313,5 @@ public class FolioReader {
         localBroadcastManager.unregisterReceiver(readLocatorReceiver);
         localBroadcastManager.unregisterReceiver(closedReceiver);
     }
-    fun Context.toast(context: Context = applicationContext, message: String, duration: Int = Toast.LENGTH_SHORT){
-        Toast.makeText(context, message , duration).show()
-    }
+
 }
