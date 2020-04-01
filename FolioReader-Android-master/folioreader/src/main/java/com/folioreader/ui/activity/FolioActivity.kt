@@ -306,8 +306,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             Log.i("Audio Link :  ", mAudioLink2)
             Log.i("Audio Link :  ", mAudioLink3)
         } catch (Exception e) {
-            String msg = (e.getMessage() == null) ? "image load failed!" :e.getMessage();
-            Log.i("image load error", msg);
+           
         }
 
 
