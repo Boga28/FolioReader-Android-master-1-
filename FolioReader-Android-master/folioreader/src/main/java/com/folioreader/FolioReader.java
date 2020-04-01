@@ -37,6 +37,8 @@ public class FolioReader {
     private static FolioReader singleton = null;
 
     public static final String EXTRA_BOOK_ID = "com.folioreader.extra.BOOK_ID";
+    public static final String EXTRA_AUDIO = "com.folioreader.extra.AUDIO";
+    public static final String EXTRA_AUDIO1 = "com.folioreader.extra.AUDIO1";
     public static final String EXTRA_READ_LOCATOR = "com.folioreader.extra.READ_LOCATOR";
     public static final String EXTRA_PORT_NUMBER = "com.folioreader.extra.PORT_NUMBER";
     public static final String ACTION_SAVE_READ_LOCATOR = "com.folioreader.action.SAVE_READ_LOCATOR";
@@ -140,7 +142,9 @@ public class FolioReader {
 
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
         intent.putExtra("audio", audioLink);
+        intent.putExtra(EXTRA_AUDIO, audioLink);
         intent.putExtra("audio1", "la bu bostur ha");
+        intent.putExtra(EXTRA_AUDIO1, "la bu bostur ha");
         context.startActivity(intent);
         return singleton;
     }

@@ -108,8 +108,10 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
     private var spine: List<Link>? = null
 
     private var mBookId: String? = null
-    public  var mAudioLink: String = ""
-    public  var mAudioLink1: String = ""
+    private  var mAudioLink: String? = null
+    private  var mAudioLink1: String? = null
+    private  var mAudioLink2: String? = null
+    private  var mAudioLink3: String? = null
     private var mEpubFilePath: String? = null
     private var mEpubSourceType: EpubSourceType? = null
     private var mEpubRawId = 0
@@ -290,10 +292,14 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             searchAdapterDataBundle = savedInstanceState.getBundle(SearchAdapter.DATA_BUNDLE)
             searchQuery = savedInstanceState.getCharSequence(SearchActivity.BUNDLE_SAVE_SEARCH_QUERY)
         }
-        mAudioLink= intent.getStringExtra("audio")
-        mAudioLink1= intent.getStringExtra("audio1")
+        mAudioLink= intent.getStringExtra(com.folioreader.FolioReader.EXTRA_AUDIO)
+        mAudioLink1= intent.getStringExtra(com.folioreader.FolioReader.EXTRA_AUDIO1)
+        mAudioLink2= intent.getStringExtra("audio")
+        mAudioLink3= intent.getStringExtra("audio1")
         Log.v(LOG_TAG, mAudioLink)
         Log.v(LOG_TAG, mAudioLink1)
+        Log.v(LOG_TAG, mAudioLink2)
+        Log.v(LOG_TAG, mAudioLink3)
 
 
         mBookId = intent.getStringExtra(FolioReader.EXTRA_BOOK_ID)
