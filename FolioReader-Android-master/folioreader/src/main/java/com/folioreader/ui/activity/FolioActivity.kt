@@ -297,14 +297,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         mAudioLink1= intent.getStringExtra(FolioReader.EXTRA_AUDIO1)
         mAudioLink2= intent.getStringExtra("audio")
         mAudioLink3= intent.getStringExtra("audio1")
-            Log.e(LOG_TAG, mAudioLink)
-            Log.e(LOG_TAG, mAudioLink1)
-            Log.e(LOG_TAG, mAudioLink2)
-            Log.e(LOG_TAG, mAudioLink3)
-            Log.e("Audio Link :  ", mAudioLink)
-            Log.e("Audio Link :  ", mAudioLink1)
-            Log.e("Audio Link :  ", mAudioLink2)
-            Log.e("Audio Link :  ", mAudioLink3)
+
 
 
 
@@ -341,6 +334,9 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
                  toast(this, mAudioLink.toString())
+                 toast(this, mAudioLink2.toString())
+                 toast(this, mAudioLink3.toString())
+                 toast(this, mAudioLink4.toString())
                // Toast.makeText(this, "AudioLink"), Toast.LENGTH_SHORT).show()
                  //Toast.makeText(this,mAudioLink), Toast.LENGTH_LONG).show()
     }
