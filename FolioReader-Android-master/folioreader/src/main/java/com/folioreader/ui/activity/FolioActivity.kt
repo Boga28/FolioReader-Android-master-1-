@@ -80,11 +80,23 @@ import com.google.android.gms.ads.reward.RewardItem
 //import com.google.android.gms.ads.reward.RewardedVideoAd
 //import com.google.android.gms.ads.reward.RewardedVideoAdListener
 
+import android.widget.SeekBar
+import kotlinx.android.synthetic.main.activity_main.*
+import android.media.MediaPlayer
+import android.annotation.SuppressLint
+import android.os.Message
+
+
+
 
 class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControllerCallback,
     View.OnSystemUiVisibilityChangeListener
     //Odullu Reklam için
     /* ,RewardedVideoAdListener */       {
+
+    private lateinit var mp: MediaPlayer
+    private var totalTime: Int = 0
+
     lateinit var mAdView : AdView
     //private lateinit var mRewardedVideoAd: RewardedVideoAd
     private var bookFileName: String? = null
@@ -109,9 +121,6 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
 
     private var mBookId: String? = null
     private  var mAudioLink: String? = null
-    private  var mAudioLink1: String? = null
-    private  var mAudioLink2: String? = null
-    private  var mAudioLink3: String? = null
     private var mEpubFilePath: String? = null
     private var mEpubSourceType: EpubSourceType? = null
     private var mEpubRawId = 0
@@ -293,17 +302,9 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             searchQuery = savedInstanceState.getCharSequence(SearchActivity.BUNDLE_SAVE_SEARCH_QUERY)
         }
 
+
         mAudioLink= intent.getStringExtra(FolioReader.EXTRA_AUDIO)
-        mAudioLink1= intent.getStringExtra(FolioReader.EXTRA_AUDIO1)
-        mAudioLink2= intent.getStringExtra("audio")
-        mAudioLink3= intent.getStringExtra("audio1")
-
-
-
-
-
         mBookId = intent.getStringExtra(FolioReader.EXTRA_BOOK_ID)
-        //mAudioLink = intent.getStringExtra("audio")
         mEpubSourceType = intent.extras!!.getSerializable(FolioActivity.INTENT_EPUB_SOURCE_TYPE) as EpubSourceType
         if (mEpubSourceType == EpubSourceType.RAW) {
             mEpubRawId = intent.extras!!.getInt(FolioActivity.INTENT_EPUB_SOURCE_PATH)
@@ -333,12 +334,83 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             mAdView = findViewById(R.id.adView)
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
-        // toast(this, mAudioLink.toString())
-        //  toast(this, mAudioLink1.toString())
-        // toast(this, mAudioLink2.toString())
-               toast(this, mAudioLink+mAudioLink1+mAudioLink2+mAudioLink3)
-               // Toast.makeText(this, "AudioLink"), Toast.LENGTH_SHORT).show()
-                 //Toast.makeText(this,mAudioLink), Toast.LENGTH_LONG).show()
+
+               toast(this, mAudioLink)
+        mp = MediaPlayer.create(this, mAudioLink.toString())
+        mp.isLooping = true
+        mp.setVolume(0.5f, 0.5f)
+        totalTime = mp.duration
+        // Position Bar
+        positionBar.max = totalTime
+        positionBar.setOnSeekBarChangeListener(
+                object : SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                        if (fromUser) {
+                            mp.seekTo(progress)
+                        }
+                    }
+                    override fun onStartTrackingTouch(p0: SeekBar?) {
+                    }
+                    override fun onStopTrackingTouch(p0: SeekBar?) {
+                    }
+                }
+        )
+        // Thread
+        Thread(Runnable {
+            while (mp != null) {
+                try {
+                    var msg = Message()
+                    msg.what = mp.currentPosition
+                    handler.sendMessage(msg)
+                    Thread.sleep(1000)
+                } catch (e: InterruptedException) {
+                }
+            }
+        }).start()
+
+
+    }
+    @SuppressLint("HandlerLeak")
+    var handler = object : Handler() {
+        override fun handleMessage(msg: Message) {
+            var currentPosition = msg.what
+
+            // Update positionBar
+            positionBar.progress = currentPosition
+
+            // Update Labels
+            var elapsedTime = createTimeLabel(currentPosition)
+            elapsedTimeLabel.text = elapsedTime
+
+            var remainingTime = createTimeLabel(totalTime - currentPosition)
+            remainingTimeLabel.text = "-$remainingTime"
+        }
+    }
+
+    fun createTimeLabel(time: Int): String {
+        var timeLabel = ""
+        var min = time / 1000 / 60
+        var sec = time / 1000 % 60
+
+        timeLabel = "$min:"
+        if (sec < 10) timeLabel += "0"
+        timeLabel += sec
+
+        return timeLabel
+    }
+
+    fun playBtnClick(v: View) {
+
+        if (mp.isPlaying) {
+            // Stop
+            mp.pause()
+            playBtn.setBackgroundResource(R.drawable.ic_play)
+
+        } else {
+            // Start
+            mp.start()
+            playBtn.setBackgroundResource(R.drawable.ic_pause)
+        }
     }
     // Ödüllü Reklam
    /* private fun loadRewardedVideoAd() {
