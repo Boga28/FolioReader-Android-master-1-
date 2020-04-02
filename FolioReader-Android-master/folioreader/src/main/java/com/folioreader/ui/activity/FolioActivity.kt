@@ -293,8 +293,8 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             searchQuery = savedInstanceState.getCharSequence(SearchActivity.BUNDLE_SAVE_SEARCH_QUERY)
         }
 
-        mAudioLink= intent.getStringExtra(com.folioreader.FolioReader.EXTRA_AUDIO)
-        mAudioLink1= intent.getStringExtra(com.folioreader.FolioReader.EXTRA_AUDIO1)
+        mAudioLink= intent.getStringExtra(FolioReader.EXTRA_AUDIO)
+        mAudioLink1= intent.getStringExtra(FolioReader.EXTRA_AUDIO1)
         mAudioLink2= intent.getStringExtra("audio")
         mAudioLink3= intent.getStringExtra("audio1")
 
@@ -336,7 +336,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         // toast(this, mAudioLink.toString())
         //  toast(this, mAudioLink1.toString())
         // toast(this, mAudioLink2.toString())
-               toast(this, mAudioLink3.toString())
+               toast(this, mAudioLink+mAudioLink1+mAudioLink2+mAudioLink3)
                // Toast.makeText(this, "AudioLink"), Toast.LENGTH_SHORT).show()
                  //Toast.makeText(this,mAudioLink), Toast.LENGTH_LONG).show()
     }
